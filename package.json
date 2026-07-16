@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder --win"
+    "dist": "electron-builder --win --publish=never"
   },
   "devDependencies": {
     "electron": "^31.0.0",
@@ -19,12 +19,7 @@
     "productName": "GW-Monitor",
     "copyright": "Copyright (c) 2026",
     "icon": "icon.ico",
-    "files": [
-      "main.js",
-      "dashboard.html",
-      "icon.ico",
-      "icon.png"
-    ],
+    "files": ["main.js", "dashboard.html", "icon.ico", "icon.png"],
     "win": {
       "target": ["nsis", "portable"],
       "icon": "icon.ico"
@@ -45,6 +40,7 @@
     },
     "portable": {
       "artifactName": "${productName}-Portable-${version}.${ext}"
-    }
+    },
+    "publish": null
   }
 }
