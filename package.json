@@ -1,0 +1,50 @@
+{
+  "name": "gw-monitor",
+  "version": "1.0.0",
+  "description": "GW-Monitor — Grundwasser-Analyse Dashboard / Groundwater Analysis Dashboard",
+  "main": "main.js",
+  "author": "Your Company Name",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.yourcompany.gwmonitor",
+    "productName": "GW-Monitor",
+    "copyright": "Copyright (c) 2026",
+    "icon": "icon.ico",
+    "files": [
+      "main.js",
+      "dashboard.html",
+      "icon.ico",
+      "icon.png"
+    ],
+    "win": {
+      "target": ["nsis", "portable"],
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "GW-Monitor",
+      "menuCategory": false,
+      "multiLanguageInstaller": true,
+      "installerLanguages": ["en_US", "de_DE"],
+      "displayLanguageSelector": true,
+      "runAfterFinish": true,
+      "artifactName": "${productName}-Setup-${version}.${ext}"
+    },
+    "portable": {
+      "artifactName": "${productName}-Portable-${version}.${ext}"
+    }
+  }
+}
